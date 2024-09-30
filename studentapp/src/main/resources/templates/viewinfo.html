@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>View Student Details</title>
+    <style>
+    /* Style the navigation link */
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+li a:hover {
+  color: #23527c;
+}
+
+/* Style the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style the links in the table */
+td a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+td a:hover {
+  color: #23527c;
+}
+
+/* Add some basic layout styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+}
+    </style>
+</head>
+<body>
+
+        <li><a href="/addStudent">Add Student</a></li>
+   
+    <h1>View Student Details</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Student_Id</th>
+                <th>Student_Name</th>
+                <th>Student_Age</th>
+                <th>Update</th>
+                 <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.age}"></td>
+                <td>
+                   <a th:href="@{/students/edit/{id}(id=${student.id})}">Update</a>
+                </td>
+                <td>
+                    <a th:href="@{/students/{id}/delete(id=${student.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

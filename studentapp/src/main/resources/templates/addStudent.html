@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #00698f;
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px; 
+}
+
+input[type="text"], 
+input[type="number"] {
+  width: 90%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius:10px;
+  margin: 20px;
+
+}
+input:focus {
+  outline: none;
+
+}
+
+
+input[type="submit"] {
+  display: block; /* Makes the button a block element */
+  margin: 20px auto; /* Auto margin centers the button */
+  width: 150px; 
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: 3e8e41;
+}
+li {
+  display: inline-block; 
+  margin-right: 20px; 
+  margin-top:20px;
+}
+
+li a {
+  text-decoration: none;
+  padding: 10px 15px; 
+  background-color: #3498db;
+  color: #fff;              
+  border-radius: 5px;       
+
+li a:hover {
+  background-color: #2980b9; 
+}
+</style>
+</head>
+<body>
+
+<li><a href="/viewStudentDetails">View Student Details</a></li>
+       
+       
+ <h1>Add Student</h1>
+    <form action="add" method="post">
+      <div class="form-group">
+        <label for="id">Student ID:</label>
+        <input type="text" id="id" name="id">
+      </div>
+      <div class="form-group">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="age">Student Age:</label>
+        <input type="number" id="age" name="age">
+      </div>
+  
+      <input type="submit" value="Submit">
+  
+</form>
+
+
+</body>
+</html>
